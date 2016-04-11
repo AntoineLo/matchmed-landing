@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   # before_filter :disable_navbar, only: [:home]
 
   def home
+    @suscriber = Suscriber.new
   end
 end

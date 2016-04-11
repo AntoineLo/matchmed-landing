@@ -10,6 +10,13 @@
         <div class="text-center">
           <h4 class="be-informed">Soyez les premiers informés du lancement de la plateforme !</h4>
         </div>
+
+        <%= simple_form_for(@suscriber) do |f| %>
+          <%= f.input :email, class: "search-input", placeholder: "Votre email...", id: "user_input_autocomplete_address_practice", style: "font-size: 13px;" %>
+          <%= f.button :submit, value: "Me prévenir du lancement !", class: "button-text", style: "font-size: 15px;" %>
+        <% end %>
+
+
         <form action="/search_locums" id="home-form-practice">
           <input type="text" class="search-input" placeholder="Votre email..." name="location" id="user_input_autocomplete_address_practice" style="font-size: 13px;">
           <button type="submit" class="btn btn-primary btn-lg btn-search-home">
