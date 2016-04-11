@@ -12,22 +12,43 @@
         </div>
 
         <%= simple_form_for(@suscriber) do |f| %>
-          <%= f.input :email, class: "search-input", placeholder: "Votre email...", id: "user_input_autocomplete_address_practice", style: "font-size: 13px;" %>
-          <%= f.button :submit, value: "Me prévenir du lancement !", class: "button-text", style: "font-size: 15px;" %>
+          <%= f.error_notification %>
+
+          <%= f.input_field :email, class: "search-input", label: false, placeholder: "Adresse email...", id: "suscriber_email", style: "font-size: 13px;" %>
+          <%= f.button :submit, method: :post, value: "Me prévenir du lancement", class: "btn btn-primary btn-lg btn-search-home", style: "font-size: 15px !important;" %>
         <% end %>
 
-
-        <form action="/search_locums" id="home-form-practice">
-          <input type="text" class="search-input" placeholder="Votre email..." name="location" id="user_input_autocomplete_address_practice" style="font-size: 13px;">
-          <button type="submit" class="btn btn-primary btn-lg btn-search-home">
-            <span class="button-text" style="font-size: 15px;">Me prévenir du lancement !</span>
-          </button>
-        </form>
-      </div>
-
       <div class="text-center" style="padding-top: 30px;">
-        <button type="submit" class="btn btn-primary btn-lg btn-search-home contact-us">Vous ne pouvez pas attendre ? Contactez-nous !</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-search-home contact-us" data-toggle="modal" data-target="#myModal">Vous ne pouvez pas attendre ? Contactez-nous !</button>
       </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Une demande urgente ?</h4>
+            </div>
+            <div class="modal-body text-center">
+              <p class="text-center">Appelez-nous au <span class="phone-number">06 00 00 00 00</span></p>
+              <p class="text-center">ou</p>
+              <p class="text-center">Laissez-nous vous rappeler :</p>
+              <form action="" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Votre nom" class="search-input" style="line-height: 30px; font-size: 13px;">
+                <input type="text" name="phone" placeholder="Votre numéro" class="search-input" style="line-height: 30px; font-size: 13px;">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+              </form>
+              <button type="button" class="btn btn-default" data-dismiss="modal" style="border: 1px solid #CCC;">Annuler</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
 
     </div>
   </div>

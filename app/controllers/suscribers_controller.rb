@@ -1,8 +1,9 @@
 class SuscribersController < ApplicationController
 
   def create
-    @suscriber = Suscriber.find(params_suscriber)
+    @suscriber = Suscriber.new(params_suscriber)
     @suscriber.save
+    flash[:notice] = "Merci pour votre confiance ! Nous vous informerons par email du lancement de la plateforme."
     redirect_to :root
   end
 

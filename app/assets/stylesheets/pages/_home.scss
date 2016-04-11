@@ -85,7 +85,7 @@
     margin: 0;
   }
 }
-#speciality-locum, #speciality-practice, #user_input_autocomplete_address, #user_input_autocomplete_address_locum, #user_input_autocomplete_address_practice {
+#speciality-locum, #speciality-practice, #user_input_autocomplete_address, #user_input_autocomplete_address_locum, #suscriber_email {
   min-width: 230px;
 }
 #speciality-locum, #speciality-practice {
@@ -98,7 +98,7 @@
     width: 100%;
   }
 }
-#user_input_autocomplete_address, #user_input_autocomplete_address_locum, #user_input_autocomplete_address_practice {
+#user_input_autocomplete_address, #user_input_autocomplete_address_locum, #suscriber_email {
   vertical-align: top;
   margin-right: 0;
   margin-left: 0;
@@ -118,7 +118,7 @@
     margin: -6px 0 0 0;
   }
 }
-#user_input_autocomplete_address:hover, #user_input_autocomplete_address_locum:hover, #user_input_autocomplete_address_practice:hover {
+#user_input_autocomplete_address:hover, #user_input_autocomplete_address_locum:hover, #suscriber_email:hover {
   border: 1px solid #cccccc;
 }
 .btn-search-home {
