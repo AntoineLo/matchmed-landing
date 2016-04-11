@@ -16,11 +16,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'owlcarousel-rails'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
-gem 'simple_form'
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+
+gem 'gibbon'
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -6,47 +6,21 @@
         <h1>Le remplacement médical à portée de main</h1>
       </div>
 
-        <div class="je-suis text-center">
-          <h3>Je suis</h3>
+      <div class="search-box" id="search-box-practice">
+        <div class="text-center">
+          <h4 class="be-informed">Soyez les premiers informés du lancement de la plateforme !</h4>
         </div>
-        <div class="buttons-home text-center">
-          <button id="practice-button" class="btn btn-round btn-home">PROFESSIONNEL INSTALLÉ</button>
-          <button id="locum-button" class="btn btn-round btn-home">REMPLAÇANT</button>
-        </div>
+        <form action="/search_locums" id="home-form-practice">
+          <input type="text" class="search-input" placeholder="Votre email..." name="location" id="user_input_autocomplete_address_practice" style="font-size: 13px;">
+          <button type="submit" class="btn btn-primary btn-lg btn-search-home">
+            <span class="button-text" style="font-size: 15px;">Me prévenir du lancement !</span>
+          </button>
+        </form>
+      </div>
 
-        <div class="search-box hidden" id="search-box-practice">
-          <form action="/search_locums" id="home-form-practice">
-            <div class="btn btn-primary btn-lg btn-search-home-left">
-              Je cherche en
-            </div>
-            <select class="search-input select-height" placeholder="Spécialité recherchée" id="speciality-practice" name="speciality">
-              <option value="medg">Médecine générale</option>
-              <option value="kine">Kinésithérapie</option>
-              <option value="otherspe">Autre spécialité</option>
-            </select>
-            <input type="text" class="search-input" placeholder="Où ? (adresse, ville...)" name="location" id="user_input_autocomplete_address_practice">
-            <button type="submit" class="btn btn-primary btn-lg btn-search-home">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span><span class="button-text"> Rechercher</span>
-            </button>
-          </form>
-        </div>
-
-        <div class="search-box hidden" id="search-box-locum">
-          <form action="/search_practices" id="home-form-locum">
-            <div class="btn btn-primary btn-lg btn-search-home-left">
-              Je cherche en
-            </div>
-            <select class="search-input select-height" placeholder="Spécialité recherchée" id="speciality-locum" name="speciality">
-              <option value="medg">Médecine générale</option>
-              <option value="kine">Kinésithérapie</option>
-              <option value="otherspe">Autre spécialité</option>
-            </select>
-            <input type="text" class="search-input" placeholder="Où ? (adresse, ville...)" name="location" id="user_input_autocomplete_address_locum">
-            <button type="submit" class="btn btn-primary btn-lg btn-search-home">
-              <span class="glyphicon glyphicon-search" aria-hidden="true"></span><span class="button-text"> Rechercher</span>
-            </button>
-          </form>
-        </div>
+      <div class="text-center" style="padding-top: 30px;">
+        <button class="btn btn-primary btn-lg btn-search-home contact-us">Vous ne pouvez pas attendre ? Contactez-nous !</button>
+      </div>
 
     </div>
   </div>
@@ -116,7 +90,7 @@
     <div class="row ">
       <div class="col-xs-12">
         <br><br>
-        <h3 class="text-center">Pourquoi utiliser RemplaMatch</h3>
+        <h3 class="text-center">Pourquoi utiliser MatchMed</h3>
       </div>
     </div>
     <br><br>
