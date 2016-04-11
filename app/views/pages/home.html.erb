@@ -14,6 +14,7 @@
         <%= simple_form_for(@suscriber) do |f| %>
           <%= f.error_notification %>
 
+          <%= f.collection_radio_buttons :has_practice, [[true, 'Professionnel installé'] ,[false, 'Remplaçant']], :first, :last, label: 'Je suis :' %>
           <%= f.input_field :email, class: "search-input", label: false, placeholder: "Adresse email...", id: "suscriber_email", style: "font-size: 13px;" %>
           <%= f.button :submit, method: :post, value: "Me prévenir du lancement", class: "btn btn-primary btn-lg btn-search-home", style: "font-size: 15px !important;" %>
         <% end %>
