@@ -18,8 +18,13 @@
           <%= f.button :submit, method: :post, value: "Me prévenir du lancement", class: "btn btn-primary btn-lg btn-search-home", style: "font-size: 15px !important;" %>
         <% end %>
 
-      <div class="text-center" style="padding-top: 30px;">
+      <div class="text-center hidden-xs" style="padding-top: 30px;">
         <button type="submit" class="btn btn-primary btn-lg btn-search-home contact-us" data-toggle="modal" data-target="#myModal">Vous ne pouvez pas attendre ? Contactez-nous !</button>
+      </div>
+
+      <div class="text-center hidden-sm hidden-md hidden-lg" style="padding-top: 30px;">
+        <p style="font-size: 13px;">Vous ne pouvez pas attendre ? </p>
+        <button type="submit" class="btn btn-primary btn-lg btn-search-home contact-us" data-toggle="modal" data-target="#myModal">Contactez-nous !</button>
       </div>
 
       <!-- Modal -->
