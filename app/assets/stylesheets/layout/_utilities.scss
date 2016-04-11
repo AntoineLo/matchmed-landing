@@ -9,6 +9,16 @@
   padding-top: 5em;
   padding-bottom: 5em;
 }
+.no-side-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.no-padding-left {
+  padding-left: 0px !important;
+}
+html, body, #container {
+  height: 100%;
+}
 
 // Backgrounds
 .bg-black {
@@ -22,4 +32,70 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+// Links
+a:hover {
+  text-decoration: none;
+}
+
+// Lines
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $gray-light;
+    margin: 1em 0;
+    padding: 0;
+}
+
+// Buttons
+.btn {
+  font-size: 13px !important;
+}
+.btn, .btn:hover, .btn:active, .btn:focus, .btn:visited {
+  border: none;
+}
+.btn-round {
+  min-width: 240px;
+  padding: 9px;
+  border-radius: 100px;
+  font-family: $Roboto;
+  font-size: 19px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  margin: 5px 20px;
+}
+.btn-home {
+  border: 3px solid #E6EAF2;
+  font-size: 15px !important;
+  color: $gray-dark;
+  background-color: #E6EAF2;
+}
+.btn-home:hover {
+  border: 3px solid #0f93d4;
+  color: white;
+  background-color: #0f93d4;
+}
+.btn-home:focus {
+  border: 3px solid #0f93d4;
+  color: white;
+  background-color: #0f93d4;
+}
+.btn-transparent {
+  background-color: transparent !important;
+  color: white !important;
+  border: 3px solid #F0F8FF !important;
+}
+.btn-blue-selected {
+  background-color: $blue !important;
+  color: white !important;
+  border: 3px solid $blue !important;
+}
+
+
+// Textarea
+textarea.form-control {
+  font-size: 13px;
 }

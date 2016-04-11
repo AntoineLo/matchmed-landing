@@ -1,1 +1,41 @@
 // Your footer style
+.main-footer {
+  z-index: 3;
+  min-height: 150px;
+  background: $blue;
+  border-top: 1px solid #EAEAEB;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  // position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  left:0px;
+  margin-bottom: 0;
+  ul {
+    margin-bottom: 0;
+    padding-top: 15px;
+  }
+  p {
+    font-size: 12px;
+    color: white;
+  }
+  i {
+    color: $blue;
+  }
+}
+
+.social {
+  display: block;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  line-height: 2.13em;
+  color: $gray-lighter;
+  padding-bottom: 6px
+}
+.primary_section{
+  padding-top: 20px;
+}
