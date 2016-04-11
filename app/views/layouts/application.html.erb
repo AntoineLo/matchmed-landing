@@ -39,15 +39,12 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
-    <div class="main-header">
-      <%= render 'shared/navbar' %>
-    </div>
     <div class="main-content">
       <%= yield %>
     </div>
       <%= render 'shared/footer' %>
       <%= javascript_include_tag 'application' %>
-      <%= cloudinary_js_config %>
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
       <script>$('.select2').select2();</script>
 
