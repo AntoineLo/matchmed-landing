@@ -34,21 +34,19 @@
               <p class="text-center">Appelez-nous au <span class="phone-number">06 00 00 00 00</span></p>
               <p class="text-center">ou</p>
               <p class="text-center">Laissez-nous vous rappeler :</p>
-              <form action="" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Votre nom" class="search-input" style="line-height: 30px; font-size: 13px;">
-                <input type="text" name="phone" placeholder="Votre numéro" class="search-input" style="line-height: 30px; font-size: 13px;">
+              <%= simple_form_for(@suscriber) do |f| %>
+                <%= f.error_notification %>
+                <%= f.input_field :name, class: "search-input", label: false, placeholder: "Votre nom", id: "suscriber_name", style: "font-size: 13px; line-height: 30px;" %>
+                <%= f.input_field :phone, class: "search-input", label: false, placeholder: "Votre numéro", id: "suscriber_phone", style: "font-size: 13px; line-height: 30px;" %>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Envoyer</button>
-              </form>
+                <%= f.button :submit, method: :post, value: "Envoyer", class: "btn btn-primary" %>
+              <% end %>
               <button type="button" class="btn btn-default" data-dismiss="modal" style="border: 1px solid #CCC;">Annuler</button>
             </div>
           </div>
         </div>
       </div>
-
-
-
 
     </div>
   </div>
