@@ -3,35 +3,39 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.main_logo {
-  margin-top: 70px;
-  margin-bottom: 50px;
-  display: block;
-   width: auto;
-   margin: auto;
-}
 .catchline {
   margin-top: 0;
-  padding: 20vh 20px 30px 20px;
+  padding: 10vh 20px 30px 20px;
   h1 {
     font-weight: lighter;
   }
-  @media (max-width: 767px) {
+  @media (min-width: 351px) and (max-width: 767px) {
     padding: 10px 20px 10px 20px;
     h1 {
-      font-size: 30px;
+      font-size: 25px;
     }
   }
-}
-.je-suis {
-  h3 {
-    font-size: 22px;
+  @media (max-width: 350px) {
+    padding: 10px 20px 10px 20px;
+    h1 {
+      font-size: 20px;
+    }
   }
 }
 .buttons-home {
   padding: 30px 0 10px 0;
   @media (max-width: 767px) {
     padding: 10px 0;
+  }
+}
+
+// Image
+#logo {
+  width: 240px;
+  margin-top: 50px;
+  @media (max-width: 767px) {
+    width: 160px;
+    margin-top: 30px;
   }
 }
 
@@ -47,91 +51,31 @@
   h4 {
     font-size: 20px;
     font-weight: 300;
-    @media (max-width: 767px) {
+    @media (min-width: 351px) and (max-width: 767px) {
       padding-bottom: 15px;
+    }
+    @media (max-width: 350px) {
+      padding-bottom: 5px;
     }
   }
 }
-.btn-search-home-left, .btn-search-home-left:hover, .btn-search-home-left:active, .btn-search-home-left:focus {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin: 5px 0 6px 0px;
-  vertical-align: top;
-  padding: 10px 16px 10px 16px !important;
-  font-size: 17px !important;
-  font-family: $Roboto;
-  font-weight: 300;
-  background-color: #E6EAF2 !important;
-  color: $gray-dark !important;
-  box-shadow: none !important;
-  cursor: auto !important;
+#suscriber_email, #suscriber_phone, #suscriber_name {
+  border-radius: 5px;
+  transition: all 0.3s ease;
   @media (max-width: 767px) {
     width: 100%;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 0;
-    margin: 0;
   }
 }
-#speciality-practice-button, #speciality-locum-button {
-  border-radius: 0;
-  margin-right: -4px;
-  margin-left: -5px;
-  @media (max-width: 767px) {
-    width: 100% !important;
-    margin: 0;
-  }
+#suscriber_email:focus, #suscriber_phone:focus, #suscriber_name:focus {
+  border: 1px solid $blue;
 }
-#speciality-locum, #speciality-practice, #user_input_autocomplete_address, #user_input_autocomplete_address_locum, #suscriber_email {
-  min-width: 230px;
-}
-#speciality-locum, #speciality-practice {
-  border-radius: 0;
-  margin-right: -6px;
-  margin-left: -5px;
-  @media (max-width: 767px) {
-    display: none;
-    margin: 0;
-    width: 100%;
-  }
-}
-#user_input_autocomplete_address, #user_input_autocomplete_address_locum, #suscriber_email {
-  vertical-align: top;
-  margin-right: 0;
-  margin-left: 0;
-  padding-left: 25px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  min-width: 300px;
-  @media (max-width: 767px) {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 20px;
-    width: 100% !important;
-    min-width: 0;
-    margin: -6px 0 0 0;
-  }
-}
-#user_input_autocomplete_address:hover, #user_input_autocomplete_address_locum:hover, #suscriber_email:hover {
-  border: 1px solid #cccccc;
+.btn-primary {
+  transition: all 0.3s ease !important;
 }
 .btn-search-home {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin: 5px 0 6px -5px;
-  vertical-align: top;
+  border-radius: 5px;
   padding: 12px 16px 11px 16px !important;
-  span {
-    vertical-align: middle;
-  }
+  margin: 5px 0;
   .glyphicon {
     font-size: 23px;
     margin-right: 5px;
@@ -142,11 +86,6 @@
     font-weight: 300;
   }
   @media (max-width: 767px) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 20px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 20px;
-    margin: 0;
     width: 100%;
   }
 }
@@ -160,15 +99,21 @@
   letter-spacing: 0 !important;
   margin:0 !important;
   font-size: 15px !important;
-  border-radius: 20px !important;
   width: auto !important;
-  @media (max-width: 767px) {
+}
+.be-informed {
+  font-family: $Roboto;
+  font-size: 17px !important;
+  letter-spacing: 1px;
+  @media (max-width: 350px) {
     font-size: 13px !important;
   }
 }
-.be-informed {
-  font-family: $base-font;
-  font-size: 17px !important;
+#inform-button {
+  padding-top: 50px;
+  @media (max-width: 350px) {
+    padding-top: 20px;
+  }
 }
 
 // End of Search box
@@ -262,4 +207,11 @@ fieldset {
 }
 .xs-search-form {
   padding: 0 5px;
+}
+.modal-body {
+  color: #888;
+  font-size: 13px;
+  label {
+    margin-bottom: 0;
+  }
 }

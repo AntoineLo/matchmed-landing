@@ -16,6 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 /* Optional class to fix the navbar on top */
@@ -31,8 +34,6 @@
 .navbar-wagon-brand {
   display: flex;
   align-items: center;
-}
-.navbar-wagon-brand img {
 }
 
 /* Navbar right section (with form, links, button) */
