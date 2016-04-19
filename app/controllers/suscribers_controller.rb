@@ -9,7 +9,7 @@ class SuscribersController < ApplicationController
       flash[:notice] = "Message bien reçu, nous vous rappelons au plus vite !"
       UserMailer.callback(@suscriber).deliver_now
     end
-    redirect_to :root
+    redirect_to root_path
   end
 
   private
