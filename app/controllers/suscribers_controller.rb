@@ -7,6 +7,7 @@ class SuscribersController < ApplicationController
       flash[:notice] = "Merci pour votre confiance ! Nous vous informerons par email du lancement de la plateforme."
     else
       flash[:notice] = "Message bien reçu, nous vous rappelons au plus vite !"
+      UserMailer.callback(@suscriber).deliver_now
     end
     redirect_to :root
   end
