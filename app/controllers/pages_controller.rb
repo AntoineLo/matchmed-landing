@@ -6,13 +6,6 @@ class PagesController < ApplicationController
 
   def home
     @suscriber = Suscriber.new
-
-    # Track a user event
-    Analytics.track(
-      {
-        anonymous_id: "anonymous",
-        event: 'New visit'
-      }
-    )
   end
+
 end
