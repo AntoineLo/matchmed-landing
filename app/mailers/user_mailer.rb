@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   def callback(suscriber)
     @suscriber = suscriber
 
-    mail(to: ["marguerite@docadoc.fr", "adrien@docadoc.fr", "antoine@docadoc.fr"], subject: "Nouveau client ! #{@suscriber.name} à recontacter !")
+    mail(to: ["marguerite@medgo.fr", "adrien@medgo.fr", "antoine@medgo.fr"], subject: "Nouveau client ! #{@suscriber.name} à recontacter !")
   end
 end
