@@ -1,55 +1,435 @@
 <div class="container-fluid" id="home_container">
   <div class="row homepage">
-    <div class="banner" id="#home_banner">
-      <%= image_tag("Logo_large_vertical_white.png", id: "logo") %>
-      <%= image_tag("Logo_large_vertical_grey.png", id: "logo", class: "hidden") %>
-      <div class="catchline text-center">
-        <h1>Le remplacement médical à portée de main</h1>
-      </div>
+    <div class="col-xs-12" style="padding:0;">
+      <div class="banner" id="#home_banner">
 
-      <div class="search-box" id="search-box-practice">
-        <div class="text-center">
-          <h4 class="be-informed">Besoin d'un <strong>remplaçant</strong> ou d'un <strong>remplacement</strong> ?</h4>
-          <h4 class="be-informed">Laissez vos coordonnées et <strong>nos équipes vous rappellent</strong> immédiatement !</h4>
+        <%= image_tag("Logo_large_vertical_white.png", id: "logo") %>
+        <%= image_tag("Logo_large_vertical_grey.png", id: "logo", class: "hidden") %>
+        <div class="catchline text-center">
+          <h1>Levez le pied, vous êtes remplacés</h1>
         </div>
 
-        <%= simple_form_for(@suscriber) do |f| %>
-          <%= f.error_notification %>
+        <div class="search-box" id="search-box-practice">
 
-          <%= f.input_field :name, class: "search-input", label: false, placeholder: "Prénom et Nom", id: "suscriber_email", style: "font-size: 13px;", required: true %>
-          <%= f.input_field :phone, class: "search-input", label: false, placeholder: "Téléphone ou email", id: "suscriber_email", style: "font-size: 13px;", required: true %>
-          <%= f.button :submit, method: :post, value: "Me contacter", class: "btn btn-primary btn-lg btn-search-home", style: "font-size: 15px !important; vertical-align: top;" %>
-        <% end %>
-
-      <div class="text-center" id="inform-button">
-        <button type="submit" class="btn btn-primary btn-lg btn-search-home contact-us" data-toggle="modal" data-target="#myModal">M'informer du lancement<span class="hidden-xs"> de la plateforme</span></button>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Me tenir informé du lancement de la plateforme</h4>
-            </div>
-            <div class="modal-body text-center">
-            <p>...encore quelques semaines à attendre avant le grand lancement de la plateforme !</p>
-              <%= simple_form_for(@suscriber) do |f| %>
-                <%= f.error_notification %>
-                <%= f.input :has_practice, collection: [[true, 'Professionnel installé'], [false, 'Remplaçant']],
-                label: "Je suis", value_method: :first, label_method: :last, as: :radio_buttons, required: true %>
-                <%= f.input_field :email, class: "search-input", label: false, placeholder: "Email", id: "suscriber_name", style: "font-size: 13px; line-height: 30px;", required: true %>
-            </div>
-            <div class="modal-footer">
-                <%= f.button :submit, method: :post, value: "Me tenir informé(e)", class: "btn btn-primary" %>
-              <% end %>
-            </div>
+          <div class="text-center">
+            <h4 class="be-informed">Besoin d'un <strong>remplaçant</strong> ou d'un <strong>remplacement</strong> ?</h4>
+            <h4 class="be-informed">Laissez vos coordonnées email et/ou téléphone pour être informé du lancement (Juillet 2016) !</h4>
           </div>
-        </div>
-      </div>
 
+          <%= simple_form_for(@suscriber) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :has_practice, collection: [[true, 'Professionnel installé'], [false, 'Remplaçant']],
+            label: "Je suis", value_method: :first, label_method: :last, as: :radio_buttons, required: true %>
+            <%= f.input_field :email, class: "search-input", label: false, placeholder: "Email / Téléphone", id: "suscriber_name", style: "font-size: 13px; line-height: 30px;", required: true %>
+            <%= f.button :submit, method: :post, value: "M'avertir du lancement !", class: "btn btn-primary" %>
+          <% end %>
+
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
+
+<div class="how">
+
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-xs-12">
+        <br>
+        <h2 class="text-center">Comment ça marche</h2>
+      </div>
+    </div>
+  </div>
+
+  <section class="content--features sliding-items">
+    <ul class="container">
+
+      <li class="row" style="border-bottom: none;">
+        <div class="tabs">
+          <div class="tab tab-active" id="practice-tab"><span class="tab-text">Pour les <br class="hidden-sm hidden-md hidden-lg"><span class="hidden-xs">professionnels</span> installés</span></div>
+          <div class="tab" id="locum-tab"><span class="tab-text">Pour les remplaçants</span></div>
+        </div>
+      </li>
+
+      <div id="how-practices">
+
+        <li class="row padded" style="border-top: 1px solid #545D70;">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "Edit_my_profile.png" %>
+            </div>
+            <div class="panel-text col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Complétez votre profil</h3>
+                  <p>Besoin d'un remplaçant ?</p>
+                  <p><span class="highlighted-text">Présentez-vous</span> et <span class="highlighted-text">votre cabinet</span>, décrivez votre activité et vos critères de recherche.</p>
+                  <p>Plus votre profil est complet, plus il ressortira dans les résultats de recherche. N'hésitez pas à <span class="highlighted-text">inclure quelques photos</span> ! </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "Set_my_dates.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Définissez vos plages de recherche</h3>
+                  <p>Créez votre ou vos plages de recherche en <span class="highlighted-text">quelques clics</span>.</p>
+                  <p>Que vous souhaitiez partir <span class="highlighted-text">2 semaines en vacances</span> ou vous faire remplacer <span class="highlighted-text">tous les samedis matin</span>, toutes les options sont possibles pour vous proposer les profils les plus pertinents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "My_received_requests.png" %>
+            </div>
+            <div class="panel-text col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Recevez des demandes de remplaçants intéressés</h3>
+                  <p>Vous serez <span class="highlighted-text">alertés par SMS, email et sur medGo.fr</span> pour chaque demande de remplacement reçue.</p>
+                  <p>Vous pourrez recevoir plusieurs demande pour une même période, facilement identifiables dans votre tableau de bord.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "Messages.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Echangez avec les remplaçants candidats</h3>
+                  <p>Discutez via la <span class="highlighted-text">messagerie en ligne</span> en quelques clics.</p>
+                  <p>Vous avez également accès à l'email et au téléphone des remplaçants qui vous ont contacté.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "Requester_profile.png" %>
+            </div>
+            <div class="panel-text  col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Choisissez un remplaçant de confiance</h3>
+                  <p>Consultez le <span class="highlighted-text">profil de chaque remplaçant candidat</span> : présentation, formation et expérience.</p>
+                  <p>Mais aussi, pour chaque candidat, l'historique des remplacements effectués et les <span class="highlighted-text">recommandations</span> éventuellement reçues.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded" style="border-bottom: none;">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "Active_research.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Pas envie d'attendre ?</h3>
+                  <p>En attendant d'être contacté, vous pouvez également <span class="highlighted-text">rechercher un remplaçant</span> parmi l'ensemble des inscrits, et filtrez par période de recherche et d'autres critères.</p>
+                  <p>Un remplaçant correspond à vos attentes et est disponible ? <span class="highlighted-text">Envoyez-lui une demande</span> à votre tour !</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </div>
+
+      <div id="how-locums" class="hidden">
+
+        <li class="row padded" style="border-top: 1px solid #545D70;">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "Edit_my_profile_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Complétez votre profil</h3>
+                  <p>A la recherche de remplacements ?</p>
+                  <p><span class="highlighted-text">Présentez-vous</span>, décrivez votre <span class="highlighted-text">formation</span> et vos <span class="highlighted-text">expériences</span> éventuelles.</p>
+                  <p>Plus votre profil est clair et complet, plus il ressortira dans les résultats de recherche. N'hésitez pas à <span class="highlighted-text">inclure une photo</span> pour pouvoir mettre un visage sur un nom ! </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "Active_research_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Recherchez des professionnels installés</h3>
+                  <p>Parcourez la <span class="highlighted-text">carte des professionnels installés</span> à la recherche de remplaçants !</p>
+                  <p>Que ce soit pour <span class="highlighted-text">un rempla régulier</span> quelques jours par semaine ou <span class="highlighted-text">un rempla à temps plein</span> pour le mois suivant, faîtes votre recherche en précisant vos critères.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "See_profile_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Choisissez vos rempla</h3>
+                  <p>Parcourez les <span class="highlighted-text">profils des professionnels installés</span> : nombre moyen de consultations par jour, logiciels utilisés, activité dominante / type de patientèle, historique de remplacements, etc.</p>
+                  <p>Choisissez ainsi <span class="highlighted-text">un rempla qui vous correspond</span>, avec toutes les cartes en main.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "Dashboard_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Envoyez une demande</h3>
+                  <p>Signifiez <span class="highlighted-text">en un clic</span> votre intérêt à un ou plusieurs professionnels installés.
+                  <p>Suivez l'évolution de vos demandes envoyées et reçues dans votre <span class="highlighted-text">tableau de bord sur medGo.fr</span>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded">
+          <div class="sliding-item sliding-item--right">
+            <div class="panel-img col-sm-7 col-sm-push-5">
+              <%= image_tag "Messages_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5 col-sm-pull-7">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--doc" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Echangez et discutez</h3>
+                  <p>A chaque étape, <span class="highlighted-text">communiquez en ligne via la messagerie</span>.</p>
+                  <p>Vous avez également accès à l'email et au téléphone des professionnels installés qui le souhaitent.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="row padded" style="border-bottom: none;">
+          <div class="sliding-item sliding-item--left">
+            <div class="panel-img col-sm-7">
+              <%= image_tag "Set_my_dates_locum.png" %>
+            </div>
+            <div class="panel-text col-sm-5">
+              <div class="s-table">
+                <div class="s-table-cell">
+                  <span class="picto picto--agenda-check" aria-hidden="true"></span>
+                  <h3 class="content--feature__title">Vous n'avez pas encore trouvé ?</h3>
+                  <p>Renseignez vos <span class="highlighted-text">plages de recherche</span> (rempla régulier ou occasionnel) : vous apparaitrez alors dans la recherche des professionnels installés.</p>
+                  <p>Vous serez <span class="highlighted-text">immédiatement alertés</span> par SMS, email et sur medGo.fr pour chaque <span class="highlighted-text">demande de remplacement reçue</span>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </div>
+
+    </ul>
+  </section>
+
+</div>
+
+<div class="why">
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="col-xs-12">
+        <br><br>
+        <h2 class="text-center">Pourquoi utiliser medGo</h2>
+      </div>
+    </div>
+    <br><br>
+    <div class="row text-center">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'easiness_icon.png', width: 100 %>
+          </div>
+          <h3>Simplicité</h3>
+          <p>Une plateforme lisible, facile à utiliser, pour tous.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'rapidity_icon.png', width: 85 %>
+          </div>
+          <h3>Rapidité</h3>
+          <p>Cherchez, échangez, et confirmez le remplacement. En quelques clics.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'trust_icon.png', width: 120 %>
+          </div>
+          <h3>Confiance</h3>
+          <p>Des profils complets, validés et recommandés par vos pairs : des patients rassurés.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'tranquility_icon.png', width: 110 %>
+          </div>
+          <h3>Tranquilité</h3>
+          <p>Le support continu de l'équipe medGo : avant, pendant et après le remplacement.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'liberty_icon.png', width: 150, style: "margin-top: 25px;" %>
+          </div>
+          <h3>Liberté</h3>
+          <p>Libérez vous du temps, soufflez et travaillez à votre rythme.</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'gain_icon.png', width: 85 %>
+          </div>
+          <h3>Gain</h3>
+          <p style="margin-bottom: 0;">Installés : amortissez votre cabinet.</p>
+          <p>Remplaçants: optimisez votre planning de rempla.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="press">
+  <div class="container-fluid">
+    <div class="row medias">
+      <div class="col-xs-12 text-center">
+        <h2>Ils parlent de nous :</h2>
+        <br>
+        <div class="flexbox">
+          <div class="flex-press-logo" style="margin: 20px 0;">
+            <%= link_to "http://www.lefigaro.fr/actualite-france/2016/05/04/01016-20160504ARTFIG00242-a-toulouse-une-neurologue-cherche-son-remplacant-sur-facebook.php", target: "_blank" do %>
+              <%= image_tag "logo_lefigaro.png", width: 200 %>
+            <% end %>
+          </div>
+          <div class="flex-press-logo" style="margin: 20px 0;">
+            <%= image_tag "logo_startupweekend.png", width: 200 %>
+          </div>
+          <div class="flex-press-logo">
+            <%= image_tag "le_wagon.png", width: 200 %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonies">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="owl-carousel">
+        <div class="carousel-card text-center col-xs-12">
+          <%= image_tag 'home_doc_4.jpg', class: "avatar-larger" %>
+          <h4>Dr Leray Benjamin | Angers</h4>
+          <div class="description text-justify">
+            <p>"La plateforme que je recommande à tous mes amis internes pour trouver leurs remplacements. "</p>
+          </div>
+        </div>
+        <div class="carousel-card text-center col-xs-12">
+          <%= image_tag 'home_doc_3.jpg', class: "avatar-larger" %>
+          <h4>Dr Valet Marielle | Orléans</h4>
+          <div class="description text-justify">
+            <p>"Je rentre les périodes pendant lesquelles je recherche des remplaçants et le site s'occupe du reste ! Que rêver de mieux ?"</p>
+          </div>
+        </div>
+        <div class="carousel-card text-center col-xs-12">
+          <%= image_tag 'home_doc_1.jpg', class: "avatar-larger" %>
+          <h4>Dr Gibaud Laurent | Les Sables d'Olonne</h4>
+          <div class="description text-justify">
+            <p>"Auparavant, trouver un remplaçant de dernière minute était une mission quasi-impossible, mais ca, c'était avant."</p>
+          </div>
+        </div>
+        <div class="carousel-card text-center col-xs-12">
+          <%= image_tag 'home_doc_2.jpg', class: "avatar-larger" %>
+          <h4>Dr Lamont Tatiana | Vaucresson</h4>
+          <div class="description text-justify">
+            <p>"medGo est de loin la solution la plus pratique, rapide et agréable que j'ai pu utiliser."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(function(){
+      $(".owl-carousel").owlCarousel({
+        items : 2,
+        itemsCustom : false,
+        itemsDesktop : [1199,2],
+        itemsDesktopSmall : [980,2],
+        itemsTablet: [768,1],
+        itemsTabletSmall: false,
+        itemsMobile : [479,1],
+        autoPlay : 4000,
+        stopOnHover : false
+      });
+    });
+
+  <% end %>
+<% end %>
 

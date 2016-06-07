@@ -48,8 +48,7 @@
 
   </head>
   <body>
-    <div class="main-content">
-
+    <div class="main-header">
       <% if flash[:notice] %>
         <div class="alert alert-info fade in">
           <button class="close" data-dismiss="alert">×</button>
@@ -63,9 +62,11 @@
           <%= flash[:alert] %>
         </div>
       <% end %>
-
+    </div>
+    <div class="main-content">
       <%= yield %>
     </div>
+      <%= render 'shared/footer' %>
       <%= javascript_include_tag 'application' %>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>

@@ -23,6 +23,12 @@
   i {
     color: $blue;
   }
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $gray-lighter;
+  }
 }
 
 .social {
