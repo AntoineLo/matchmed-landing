@@ -71,23 +71,42 @@
   .suscriber_email, .btn-primary {
     width: 100%;
   }
-  label {
+  label.radio_buttons {
     font-family: "Raleway", sans-serif;
     font-size: 15px;
     color: white;
     margin-right: 10px;
-    @media (max-width: 767px) {
-      margin-right: 2px;
-    }
+    font-weight: bold;
   }
-  input[type="radio"], input[type="checkbox"] {
-    margin: 4px !important;
-  }
-  .labelled-radio {
+  label {
     display: inline-block;
     font-size: 15px;
     font-weight: lighter;
     font-family: "Raleway", sans-serif;
+  }
+  .radio {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .radio label {
+    padding-left: 0;
+    min-height: 22px;
+    padding-left: 10px;
+    padding-right: 15px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .radio input[type="radio"] {
+    position: relative;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
   }
 }
 #suscriber_email, #suscriber_phone, #suscriber_name {

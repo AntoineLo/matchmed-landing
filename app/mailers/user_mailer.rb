@@ -7,7 +7,14 @@ class UserMailer < ApplicationMailer
   #
   def callback(suscriber)
     @suscriber = suscriber
+    if @suscriber.has_practice
+      status = "Pro installé"
+    elsif @suscriber.has_practice == false
+      status = "Remplaçant"
+    else
+      status = "Statut non spécifié"
+    end
 
-    mail(to: ["marguerite@medgo.fr", "adrien@medgo.fr", "antoine@medgo.fr"], subject: "Nouveau client ! #{@suscriber.name} à recontacter !")
+    mail(to: ["marguerite@medgo.fr", "adrien@medgo.fr", "antoine@medgo.fr"], subject: "Nouvel inscrit (#{status}! Contact = #{@suscriber.email}")
   end
 end
