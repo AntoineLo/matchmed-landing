@@ -28,11 +28,56 @@
         </div>
 
         <div class="anchor-link">
-          <%= link_to root_path(anchor: "how") do %>
+          <%= link_to root_path(anchor: "why") do %>
             <i class="fa fa-3x fa-angle-down fa-pulse"></i>
           <% end %>
         </div>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why" id="why">
+  <div class="container-fluid">
+    <br>
+    <div class="row text-center" style="margin-top: 40px;">
+      <div class="col-xs-6 col-md-3">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'rapidity_icon.png', width: 77 %>
+          </div>
+          <h3>Rapidité</h3>
+          <p>Cherchez, échangez, et confirmez le remplacement. En quelques clics.</p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'trust_icon.png', width: 108 %>
+          </div>
+          <h3>Confiance</h3>
+          <p>Des profils complets, validés et recommandés par vos pairs : des patients rassurés.</p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'tranquility_icon.png', width: 99 %>
+          </div>
+          <h3>Tranquilité</h3>
+          <p>Le support continu de l'équipe medGo : avant, pendant et après le remplacement.</p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="card round_icons">
+          <div class="img-container">
+            <%= image_tag 'gain_icon.png', width: 77 %>
+          </div>
+          <h3>Gain</h3>
+          <p style="margin-bottom: 0;">Installés : amortissez votre cabinet.</p>
+          <p>Remplaçants : optimisez votre planning de remplacements.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -290,74 +335,7 @@
 
 </div>
 
-<div class="why">
-  <div class="container-fluid">
-    <div class="row ">
-      <div class="col-xs-12">
-        <br><br>
-        <h2 class="text-center">Pourquoi utiliser medGo</h2>
-      </div>
-    </div>
-    <br><br>
-    <div class="row text-center">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'easiness_icon.png', width: 100 %>
-          </div>
-          <h3>Simplicité</h3>
-          <p>Une plateforme lisible, facile à utiliser, pour tous.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'rapidity_icon.png', width: 85 %>
-          </div>
-          <h3>Rapidité</h3>
-          <p>Cherchez, échangez, et confirmez le remplacement. En quelques clics.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'trust_icon.png', width: 120 %>
-          </div>
-          <h3>Confiance</h3>
-          <p>Des profils complets, validés et recommandés par vos pairs : des patients rassurés.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'tranquility_icon.png', width: 110 %>
-          </div>
-          <h3>Tranquilité</h3>
-          <p>Le support continu de l'équipe medGo : avant, pendant et après le remplacement.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'liberty_icon.png', width: 150, style: "margin-top: 25px;" %>
-          </div>
-          <h3>Liberté</h3>
-          <p>Libérez vous du temps, soufflez et travaillez à votre rythme.</p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card round_icons">
-          <div class="img-container">
-            <%= image_tag 'gain_icon.png', width: 85 %>
-          </div>
-          <h3>Gain</h3>
-          <p style="margin-bottom: 0;">Installés : amortissez votre cabinet.</p>
-          <p>Remplaçants : optimisez votre planning de remplacements.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 <div class="press">
   <div class="container-fluid">
@@ -376,7 +354,7 @@
           </div>
           <div class="flex-press-logo">
             <%= link_to "https://www.lewagon.com/fr/alumni", target: "_blank" do %>
-              <%= image_tag "le_wagon.png", width: 200 %>
+              <%= image_tag "logo_wagon_nobg.png", width: 200 %>
             <% end %>
           </div>
         </div>

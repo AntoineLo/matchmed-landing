@@ -243,20 +243,19 @@
   h3 {
     font-size: 28px;
     color: #545D70;
-    padding: 0 10px;
+    padding: 0;
   }
   h2 {
-    margin-bottom: 40px;
     color: #545D70;
   }
   .img-container {
     height: 105px;
-    width: 150px;
+    width: 130px;
     margin: auto;
   }
 }
 .press {
-  background-color: white;
+  background-color: $background-blue;
   h3 {
     font-size: 28px;
     color: #545D70;
@@ -302,7 +301,9 @@
   margin-bottom: 40px;
   p {
     font-size: 14px;
-    padding: 0px 20px;
+    @media (min-width: 768px) {
+      padding: 0px 20px;
+    }
   }
   h3 {
     font-weight: 300 !important;
