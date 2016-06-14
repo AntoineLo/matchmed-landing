@@ -59,5 +59,10 @@ $(document).ready(function(){
       }
     });
   });
+
+  // Track clicks in analytics
+  $('#register-button').on('click', function() {
+    analytics.track('Signed up for launch');
+  });
 });
 

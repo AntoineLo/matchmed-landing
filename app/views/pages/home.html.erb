@@ -21,7 +21,7 @@
             <%= f.input :has_practice, collection: [[true, 'Professionnel installé'], [false, 'Remplaçant']], class: "form-inline", label: "Je suis : ", value_method: :first, label_method: :last, as: :radio_buttons %>
             <%= f.input_field :email, class: "search-input", label: false, placeholder: "Email et/ou téléphone", style: "width: 100%; margin: 10px 0;" %>
             <br>
-            <%= f.button :submit, method: :post, value: "M'avertir du lancement !", class: "btn btn-primary", style: "width: 100%; font-size: 15px !important; padding: 10.5px 12px; border-radius: 5px;" %>
+            <%= f.button :submit, method: :post, value: "M'avertir du lancement !", class: "btn btn-primary", id:"register-button", style: "width: 100%; font-size: 15px !important; padding: 10.5px 12px; border-radius: 5px;" %>
           <% end %>
 
         </div>
